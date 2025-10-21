@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "strict": true,
     "target": "esnext",
     "module": "esnext",
     "allowJs": true,
@@ -9,13 +10,13 @@
     "resolveJsonModule": false,
     "skipLibCheck": true,
     "sourceMap": false,
-    "strict": true,
     "declaration": true,
     "outDir": "./dist",
     "rootDir": "src",
     "types": ["node"],
     "lib": ["dom"],
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
+    "isolatedModules": true
   },
   "typeRoots": [
     "./types"
@@ -23,5 +24,6 @@
   "include": [
     "./src/**/*.ts",
     "./src/**/*.svelte"
-  ]
+  ],
+  "exclude": ["node_modules", "dist"]
 }
