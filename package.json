@@ -30,7 +30,7 @@
   "files": [ "dist" ],
   "scripts": {
     "build": "tsc && node scripts/build.js",
-    "postinstall": "npm run build"
+    "prepare": "npm run build"
   },
   "peerDependencies": {
     "svelte": "^5.0.0",
@@ -61,6 +61,6 @@
     "vitest": "3.2.4",
     "log-update": "7.0.1",
     "p-map": "7.0.3",
-    "jiti": "2.6.1"
+    "eslint": "9.38.0"
   }
 }
