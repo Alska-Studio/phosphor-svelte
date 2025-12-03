@@ -11,8 +11,10 @@ const EXCLUDE_RE = /\/node_modules\/|\/\.svelte-kit\/|virtual:__sveltekit/;
 
 const parseId = (id: string) => {
   const [ filename, rawQuery = '' ] = id.split("?", 2);
+
   const query = Object.fromEntries(Array.from(new URLSearchParams(rawQuery))
     .map(([ k, v ]) => [k, v === '' ? true : v]));
+
   return { filename, query };
 }
 
@@ -64,7 +66,8 @@ export function sveltePhosphorOptimize(): Plugin {
     transform(code: string, id: string): object | void {
       const { filename } = parseId(id);
 
-      if (!id.endsWith('.svelte')) {
+      // Process .svelte and .ts files only
+      if (!id.endsWith('.svelte') && !id.endsWith('.ts')) {
         return;
       }
 

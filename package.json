@@ -30,7 +30,7 @@
   "files": [ "dist" ],
   "scripts": {
     "build": "tsc && node scripts/build.js",
-    "prepare": "npm run build"
+    "prepare": "npm run build --loglevel=error --no-update-notifier"
   },
   "peerDependencies": {
     "svelte": "5.40.0",
